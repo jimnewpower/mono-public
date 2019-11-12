@@ -1,2 +1,1 @@
-# mono-public
-Public monorepo
+Public Repository containing common libraries.
