@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="common.bounds.BoundsTest" tests="29" skipped="0" failures="0" errors="0" timestamp="2020-02-05T00:56:51" hostname="jim-XPS-15-9550" time="0.032">
+  <properties/>
+  <testcase name="typicalValidBounds" classname="common.bounds.BoundsTest" time="0.001"/>
+  <testcase name="intervalsAndBins" classname="common.bounds.BoundsTest" time="0.001"/>
+  <testcase name="fractionBetween" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="createFromArray" classname="common.bounds.BoundsTest" time="0.001"/>
+  <testcase name="common" classname="common.bounds.BoundsTest" time="0.004"/>
+  <testcase name="boundValue" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="expand" classname="common.bounds.BoundsTest" time="0.001"/>
+  <testcase name="createFromCollection" classname="common.bounds.BoundsTest" time="0.001"/>
+  <testcase name="minGreaterThanMaxArg" classname="common.bounds.BoundsTest" time="0.012"/>
+  <testcase name="mergeValid" classname="common.bounds.BoundsTest" time="0.003"/>
+  <testcase name="createFromBadCollectionShouldReturnNullBounds" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="commonNullArg" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="createFromEmptyOrDvalArray" classname="common.bounds.BoundsTest" time="0.001"/>
+  <testcase name="zeroRange" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="dvalMaxArg" classname="common.bounds.BoundsTest" time="0.002"/>
+  <testcase name="dvalMinArg" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="createFromNullBoundsObject" classname="common.bounds.BoundsTest" time="0.001"/>
+  <testcase name="allOverlap" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="overlaps" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="inifiniteMaxArg" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="inifiniteMinArg" classname="common.bounds.BoundsTest" time="0.001"/>
+  <testcase name="common2" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="nonZeroRange" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="commonEmptyArg" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="commonWithDisjointBounds" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="NaN_MaxArg" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="identicalMinMaxValidBounds" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="NaN_MinArg" classname="common.bounds.BoundsTest" time="0.0"/>
+  <testcase name="fractionBetweenZeroRange" classname="common.bounds.BoundsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

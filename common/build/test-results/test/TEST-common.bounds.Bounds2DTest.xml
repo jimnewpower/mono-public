@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="common.bounds.Bounds2DTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2020-02-05T00:56:51" hostname="jim-XPS-15-9550" time="0.014">
+  <properties/>
+  <testcase name="testExpandByPercentage" classname="common.bounds.Bounds2DTest" time="0.004"/>
+  <testcase name="testMinMaxWidthHeight" classname="common.bounds.Bounds2DTest" time="0.003"/>
+  <testcase name="testExpansionFromArrays" classname="common.bounds.Bounds2DTest" time="0.001"/>
+  <testcase name="testRatio" classname="common.bounds.Bounds2DTest" time="0.0"/>
+  <testcase name="testPointInside" classname="common.bounds.Bounds2DTest" time="0.0"/>
+  <testcase name="fromCoordinates" classname="common.bounds.Bounds2DTest" time="0.001"/>
+  <testcase name="doNotExpandUnnecessarily" classname="common.bounds.Bounds2DTest" time="0.0"/>
+  <testcase name="testContains" classname="common.bounds.Bounds2DTest" time="0.0"/>
+  <testcase name="testExpansion" classname="common.bounds.Bounds2DTest" time="0.0"/>
+  <testcase name="testDisjoint" classname="common.bounds.Bounds2DTest" time="0.0"/>
+  <testcase name="testWidthHeight" classname="common.bounds.Bounds2DTest" time="0.0"/>
+  <testcase name="testValidBounds" classname="common.bounds.Bounds2DTest" time="0.001"/>
+  <testcase name="fromArrays" classname="common.bounds.Bounds2DTest" time="0.0"/>
+  <testcase name="testDefaultConstructor" classname="common.bounds.Bounds2DTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

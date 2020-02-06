@@ -12,7 +12,7 @@ public class MathUtil {
    * @param b second double value
    * @return true if difference between doubles is less than default tolerance,
    * false otherwise
-   * @see jcore.math.Dval
+   * @see common.dval.Dval
    */
   public static boolean doublesEqual(double a, double b) {
     return doublesEqual(a, b, DOUBLES_EQUAL_COMPARE_TOLERANCE);
@@ -26,7 +26,7 @@ public class MathUtil {
    * @param tolerance compare tolerance
    * @return true if difference between doubles is less than tolerance,
    * false otherwise
-   * @see jcore.math.Dval
+   * @see common.dval.Dval
    */
   public static boolean doublesEqual(double a, double b, double tolerance) {
     if (Dval.isDval(a) && Dval.isDval(b))

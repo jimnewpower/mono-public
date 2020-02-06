@@ -59,6 +59,10 @@ public interface Bounds {
         || (other.getMax() >= getMin() && other.getMax() <= getMax());
   }
 
+  public static final Bounds PERCENT = Bounds.of(0, 100);
+  public static final Bounds DEGREES = Bounds.of(0, 360);
+  public static final Bounds RGB_8_BIT = Bounds.of(0, 255);
+
   public static Bounds of(double min, double max) {
     return immutable(min, max);
   }
@@ -256,5 +260,9 @@ public interface Bounds {
 
   public default double bound(double value) {
     return Math.min(getMax(), Math.max(getMin(), value));
+  }
+  
+  public default int bound(int value) {
+    return (int)Math.min(getMax(), Math.max(getMin(), value));
   }
 }
