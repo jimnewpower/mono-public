@@ -15,9 +15,8 @@ public class GridManipulator extends RecursiveTask<MutableGridData<Double>> {
     ForkJoinPool pool = ForkJoinPool.commonPool();
     int nProc = pool.getParallelism();
     long size = inputGrid.size();
-    int maxItemsPerProcess = (int) ((double) size / (double) nProc / 2.0);
-    if (maxItemsPerProcess < 1)
-      maxItemsPerProcess = 1;
+    int maxItemsPerProcess = 
+        Math.min(1, (int) (((double) size / (double) nProc) / 2.0));
 
     GridManipulator gridManipulator = GridManipulator.create(
         operator, 
