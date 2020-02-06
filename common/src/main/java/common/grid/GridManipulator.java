@@ -1,10 +1,50 @@
 package common.grid;
 
 import java.util.Objects;
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 import java.util.function.DoubleUnaryOperator;
 
-public class GridManipulator extends RecursiveTask<Boolean> {
+import common.dval.Dval;
+
+public class GridManipulator extends RecursiveTask<MutableGridData<Double>> {
+  public static MutableGridData<Double> run(
+    DoubleUnaryOperator operator,
+    DoubleGrid inputGrid
+  ) {
+    ForkJoinPool pool = ForkJoinPool.commonPool();
+    int nProc = pool.getParallelism();
+    long size = inputGrid.size();
+    int maxItemsPerProcess = (int) ((double) size / (double) nProc / 2.0);
+    if (maxItemsPerProcess < 1)
+      maxItemsPerProcess = 1;
+
+    GridManipulator gridManipulator = GridManipulator.create(
+        operator, 
+        inputGrid,
+        maxItemsPerProcess);
+    
+    MutableGridData<Double> result = pool.invoke(gridManipulator);
+    return result;
+  }
+  
+  public static GridManipulator create(
+    DoubleUnaryOperator operator,
+    DoubleGrid inputGrid,
+    int maxItemsPerProcess
+  ) {
+    MutableGridData<Double> resultGrid = 
+        MutableDoubleGrid.create(inputGrid, Dval.DVAL_DOUBLE);
+    return new GridManipulator(
+      operator, 
+      inputGrid, 
+      resultGrid, 
+      0/* startIndex */, 
+      (int)inputGrid.size() - 1/* endIndex */,
+      maxItemsPerProcess/* max */
+    );
+  }
+  
   private final DoubleUnaryOperator operator;
   private final DoubleGrid inputGrid;
   private final MutableGridData<Double> resultGrid;
@@ -12,7 +52,7 @@ public class GridManipulator extends RecursiveTask<Boolean> {
   private final int end;
   private final int max;
 
-  public GridManipulator(
+  private GridManipulator(
     DoubleUnaryOperator operator,
     DoubleGrid inputGrid,
     MutableGridData<Double> resultGrid,
@@ -29,7 +69,7 @@ public class GridManipulator extends RecursiveTask<Boolean> {
   }
 
   @Override
-  protected Boolean compute() {
+  protected MutableGridData<Double> compute() {
     int size = 1 + end - start;
     if (size <= max) {
       return computeDirectly();
@@ -59,13 +99,13 @@ public class GridManipulator extends RecursiveTask<Boolean> {
       )
     );
 
-    return Boolean.TRUE;
+    return resultGrid;
   }
 
-  private Boolean computeDirectly() {
+  private MutableGridData<Double> computeDirectly() {
     for (int index = start; index <= end; index++) {
       resultGrid.setValue(index, operator.applyAsDouble(inputGrid.getValue(index)));
     }
-    return Boolean.TRUE;
+    return resultGrid;
   }
 }

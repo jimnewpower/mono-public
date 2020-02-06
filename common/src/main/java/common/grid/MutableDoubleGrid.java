@@ -1,6 +1,14 @@
 package common.grid;
 
+import java.util.Arrays;
+
 public class MutableDoubleGrid extends DoubleGrid implements MutableGridData<Double> {
+  public static MutableDoubleGrid create(Grid geometry, double initialValue) {
+    double[] gridValues = new double[(int)geometry.size()];
+    Arrays.fill(gridValues, initialValue);
+    return new MutableDoubleGrid(geometry, gridValues);
+  }
+
   public static MutableDoubleGrid create(Grid geometry, double[] values) {
     return new MutableDoubleGrid(geometry, values);
   }

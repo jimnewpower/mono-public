@@ -72,7 +72,6 @@ public class DoubleGrid implements Grid, GridData<Double> {
 
   @Override
   public Double getValue(int index) {
-    // TODO Auto-generated method stub
-    return null;
+    return values[index];
   }
 }
